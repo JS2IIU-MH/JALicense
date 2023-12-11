@@ -1,0 +1,72 @@
+{
+  "musen": [
+    {
+      "detailInfo": {
+        "radioSpec1": "4AM",
+        "radioStationPurpose": "アマチュア業務用",
+        "note": "",
+        "permittedOperatingHours": "常　時",
+        "address": "＊＊＊＊＊",
+        "licenseDate": "2020-01-16",
+        "broadcastMatter": "",
+        "commMatter": "アマチュア業務に関する事項",
+        "office": "",
+        "validTerms": "2025-01-15まで",
+        "commPartner": "アマチュア局",
+        "startingLimit": "",
+        "broadcastDistrict": "",
+        "workPersonName": "",
+        "identificationSignals": "JS2IIU      ",
+        "radioStationNumber": "",
+        "radioStationCategory": "アマチュア局",
+        "movementArea": "陸上、海上及び上空",
+        "radioEuipmentLocation": "愛知県岩倉市",
+        "licenseNumber": "＊＊＊＊＊",
+        "name": "＊＊＊＊＊"
+      },
+      "listInfo": {
+        "name": "＊＊＊＊＊（JS2IIU）",
+        "radioStationPurpose": "アマチュア業務用",
+        "tdfkCd": "愛知県岩倉市",
+        "no": "1",
+        "licenseDate": "2020-01-16"
+      }
+    },
+    {
+      "detailInfo": {
+        "radioSpec1": "2AF",
+        "radioStationPurpose": "アマチュア業務用",
+        "note": "",
+        "permittedOperatingHours": "常　時",
+        "address": "＊＊＊＊＊",
+        "licenseDate": "2021-01-26",
+        "broadcastMatter": "",
+        "commMatter": "アマチュア業務に関する事項",
+        "office": "",
+        "validTerms": "2026-01-25まで",
+        "commPartner": "アマチュア局",
+        "startingLimit": "",
+        "broadcastDistrict": "",
+        "workPersonName": "",
+        "identificationSignals": "JS2IIU      ",
+        "radioStationNumber": "",
+        "radioStationCategory": "アマチュア局",
+        "movementArea": "移動しない",
+        "radioEuipmentLocation": "愛知県岩倉市",
+        "licenseNumber": "＊＊＊＊＊",
+        "name": "＊＊＊＊＊"
+      },
+      "listInfo": {
+        "name": "＊＊＊＊＊（JS2IIU）",
+        "radioStationPurpose": "アマチュア業務用",
+        "tdfkCd": "愛知県岩倉市",
+        "no": "2",
+        "licenseDate": "2021-01-26"
+      }
+    }
+  ],
+  "musenInformation": {
+    "totalCount": "2",
+    "lastUpdateDate": "2023-12-07"
+  }
+}
