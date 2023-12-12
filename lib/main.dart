@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'musen.dart';
 
@@ -46,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String searchCallsign = '';
   List outStr = [];
   RegExp regJACall = RegExp(r'^[J78][A-S][0-9][A-Z]{2,3}');
+  bool isSearched = false;
 
   @override
   void initState() {
@@ -67,20 +69,69 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
   }
 
+  // click map icon
+  void clickMapIcon() async {
+    debugPrint('clickMapIcon');
+    if (isSearched) {
+      if (listInfo[0].tdfkCd.isNotEmpty) {
+        final Uri url = Uri.parse(
+            "https://www.google.com/maps/place/${listInfo[0].tdfkCd}/");
+        if (!await launchUrl(url)) {
+          throw Exception('Could not launch $url');
+        }
+      }
+    }
+  }
+
+  String callSignSimplifier(String callSignInput) {
+    debugPrint('callSignSimplifier($callSignInput)');
+    String callSign = '';
+
+    if (callSignInput.contains('/')) {
+      var callParts = callSignInput.split('/');
+      callSign = callParts[0];
+    } else {
+      callSign = callSignInput;
+    }
+    return callSign;
+  }
+
+  // click web icon
+  void clickWebIcon() async {
+    debugPrint('clickWebIcon');
+    String? callSign = '';
+    final pattern = RegExp(r'([¥w]+)/[¥w]+');
+    final matches = pattern.allMatches(_controller.text).toList();
+    if (isSearched) {
+      if (matches.isNotEmpty) {
+        var match = matches[0];
+        callSign = match.group(0);
+      } else {
+        callSign = _controller.text;
+      }
+      if (listInfo[0].tdfkCd.isNotEmpty) {
+        final Uri url = Uri.parse("https://www.qrz.com/db/$callSign/");
+        if (!await launchUrl(url)) {
+          throw Exception('Could not launch $url');
+        }
+      }
+    }
+  }
+
   String genResultString(ListInfoResp listInfo, DetailInfoResp detailInfo) {
     String out = '';
 
     // int.parse(string)
-    var _i = listInfo.no;
-    var _name = listInfo.name;
-    var _location = detailInfo.radioEuipmentLocation;
-    var _licDate = detailInfo.licenseDate;
-    var _licValid = detailInfo.validTerms;
-    var _moveArea = detailInfo.movementArea;
-    var _radioSpec = detailInfo.radioSpec1;
+    var i = listInfo.no;
+    var name = listInfo.name;
+    var location = detailInfo.radioEuipmentLocation;
+    var licDate = detailInfo.licenseDate;
+    var licValid = detailInfo.validTerms;
+    var moveArea = detailInfo.movementArea;
+    var radioSpec = detailInfo.radioSpec1;
 
-    out = '[$_i/$gitemCount] $_name\n$_location\n$_licDate から $_licValid\n';
-    out = '$out$_moveArea\n$_radioSpec';
+    out = '[$i/$gitemCount] $name\n$location\n$licDate から $licValid\n';
+    out = '$out$moveArea\n$radioSpec';
     debugPrint(out);
 
     return out;
@@ -97,8 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return gCard;
   }
 
-  Future<void> qrzSearch(String callSign) async {
-    debugPrint(callSign);
+  Future<void> qrzSearch(String callSignInput) async {
+    debugPrint(callSignInput);
+    var callSign = callSignSimplifier(callSignInput);
     debugPrint(regJACall.hasMatch(callSign).toString());
 
     if ((callSign.length > 5) & (regJACall.hasMatch(callSign))) {
@@ -142,10 +194,12 @@ class _MyHomePageState extends State<MyHomePage> {
           }
           searchResult =
               '常置場所＝${listInfo[0].tdfkCd}\n  ※データ更新日：${resMusen.lastUpdateDate}';
+          isSearched = true;
         }
       });
     } else {
       setState(() {
+        isSearched = false;
         searchResult = 'コールサイン入力を確認してください。';
       });
     }
@@ -233,6 +287,32 @@ class _MyHomePageState extends State<MyHomePage> {
           Text(
             searchResult,
             style: const TextStyle(fontSize: 18),
+          ),
+          const Gap(20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                icon: const Icon(
+                  Icons.map_sharp,
+                  size: 30.0,
+                ),
+                color: Theme.of(context).colorScheme.primary,
+                onPressed: () {
+                  clickMapIcon();
+                },
+              ),
+              IconButton(
+                icon: const Icon(
+                  Icons.web_sharp,
+                  size: 30.0,
+                ),
+                color: Theme.of(context).colorScheme.primary,
+                onPressed: () {
+                  clickWebIcon();
+                },
+              ),
+            ],
           ),
           const Gap(20),
           ListView.builder(
