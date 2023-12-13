@@ -6,7 +6,7 @@ on:
 jobs:
   SetGlobalConstants:
     runs-on: ubuntu-latest
-    timeout-minute: 10
+    timeout-minutes: 10
     outputs:
       DATE_BADGE_COLOR: 4B0082
     steps:
