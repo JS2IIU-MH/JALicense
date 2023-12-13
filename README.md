@@ -5,6 +5,7 @@
 総務省、電波利用ホームページの無線局検索をスマホから手軽に使えるようにしました。
 移動運用のお供にしていだだけたら幸いです。
 
+![](https://byob.yarr.is/JS2IIU-MH/JALicense/time)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 
 <img src="doc/JALicense_image.png" width=500>
