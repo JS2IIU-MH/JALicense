@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 5, 14, 62)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'JA Callsign Search'),
+      home: const MyHomePage(title: 'JA License'),
       debugShowCheckedModeBanner: false,
     );
   }

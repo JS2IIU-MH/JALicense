@@ -34,6 +34,7 @@ dependencies:
   http: ^1.1.2
   json_annotation: ^4.8.1
   url_launcher: ^6.2.2
+  flutter_launcher_icons: ^0.13.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -96,3 +97,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  ios: true
+  image_path: "asset/icon/JAL_icon_ios.png"
+  remove_alpha_ios: true
+  android: true
+  adaptive_icon_background: "asset/icon/JAL_icon_android.png"
+  adaptive_icon_foreground: "asset/icon/JAL_icon_android.png"
