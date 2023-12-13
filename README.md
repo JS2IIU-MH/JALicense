@@ -1,6 +1,6 @@
 # JA License
 
-<img src="doc/JALicense.png" width=500>
+<img src="doc/JALicense.png" width=720>
 
 総務省、電波利用ホームページの無線局検索をスマホから手軽に使えるようにしました。
 移動運用のお供にしていだだけたら幸いです。
