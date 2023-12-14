@@ -137,17 +137,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return out;
   }
 
-  Card genResultCard(ListInfoResp listInfo, DetailInfoResp detailInfo) {
-    var searchResult = genResultString(listInfo, detailInfo);
-    var gCard = Card(
-      child: Row(children: <Widget>[
-        Text(searchResult),
-      ]),
-    );
-
-    return gCard;
-  }
-
   Future<void> qrzSearch(String callSignInput) async {
     debugPrint(callSignInput);
     var callSign = callSignSimplifier(callSignInput);
