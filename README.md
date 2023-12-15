@@ -47,6 +47,8 @@
 
 ## 今後の追加機能
 - JCCコードを表示させる
+  - こちらでJCCコードが公開されている。なぜかCSVでもない、オリジナルスタイルのTXTファイルだそうです。どうしましょ・・・
+  - [市郡区番号リスト](https://www.jarl.org/Japanese/A_Shiryo/A-2_jcc-jcg/jcc.htm)
 - JS2IIUを入力したらピカピカさせる！？
 
 ## 参考にしたページ
@@ -59,4 +61,4 @@
 - [【Flutter】ビルド,リリース,テスターへデプロイ（Flutter,VSCode, Build, Release,Deploy,Tester）](https://isub.co.jp/flutter/flutter-dev-vscode-build-release-deploy-tester/)
 - [Build and release an Android app | Flutter](https://docs.flutter.dev/deployment/android)
 - [今更ながらAndroid の keystore と 署名（signingConfigs） の管理・運用について考えてみた #Android - Qiita](https://qiita.com/taki4227/items/c5685ec722a195764237)
-
+- [【Flutter test】Flutterのテスト、チートシート│Flutter Salon](https://flutter.salon/flutter/test-cheat-sheet/)
