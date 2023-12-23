@@ -62,3 +62,4 @@
 - [Build and release an Android app | Flutter](https://docs.flutter.dev/deployment/android)
 - [今更ながらAndroid の keystore と 署名（signingConfigs） の管理・運用について考えてみた #Android - Qiita](https://qiita.com/taki4227/items/c5685ec722a195764237)
 - [【Flutter test】Flutterのテスト、チートシート│Flutter Salon](https://flutter.salon/flutter/test-cheat-sheet/)
+- [［Flutter］ Androidアプリの署名｜ChisatoM](https://note.com/ewc/n/nebc9a81c082e)
