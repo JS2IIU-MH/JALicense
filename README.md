@@ -10,6 +10,12 @@
 
 <img src="doc/JALicense_image.png" width=500>
 
+## 動作環境
+- iOS
+- Android
+- MacOS
+- Windows
+
 ## プライバシーポリシー
 アマチュア無線局JS2IIUおよびその免許人は、提供するアプリ「JA License」の利用者に関する個人情報を含んだ情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。
 
