@@ -251,26 +251,30 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           const Gap(10),
-          ElevatedButton(
-            onPressed: () {
-              qrzSearch(_controller.text);
-              setState(() {
-                searchResult = "検索中です。お待ちください。";
-              });
-
-              debugPrint('search pressed');
-              debugPrint(_controller.text);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.primary,
-              foregroundColor: Theme.of(context).colorScheme.onPrimary,
-              fixedSize: const Size(300, 50),
-              textStyle: const TextStyle(fontSize: 22),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(3),
+          SizedBox(
+            width: 330,
+            height: 70,
+            child: ElevatedButton.icon(
+              onPressed: () {
+                qrzSearch(_controller.text);
+                setState(() {
+                  searchResult = "検索中です。お待ちください。";
+                });
+                debugPrint('search pressed');
+                debugPrint(_controller.text);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                fixedSize: const Size(300, 50),
+                textStyle: const TextStyle(fontSize: 28),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(13),
+                ),
               ),
+              icon: const Icon(Icons.search),
+              label: const Text('Search'),
             ),
-            child: const Text('Search'),
           ),
           const Gap(20),
           Text(

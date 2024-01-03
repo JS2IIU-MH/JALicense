@@ -100,8 +100,8 @@ flutter:
 
 flutter_icons:
   ios: true
-  image_path: "asset/icon/JAL_icon_ios.png"
   remove_alpha_ios: true
   android: true
-  adaptive_icon_background: "asset/icon/JAL_icon_android.png"
-  adaptive_icon_foreground: "asset/icon/JAL_icon_android.png"
+  image_path: "asset/icon/JALicenseIcon_1024.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "asset/icon/JALicenseIcon_1024.png"
